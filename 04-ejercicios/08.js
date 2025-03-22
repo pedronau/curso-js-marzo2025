@@ -37,3 +37,5 @@ console.log(resultado);
 /**ni idea de como lo ha hecho
  * este ejercicio no me ha salido bien
  */
+
+// ESTE PARECE IMPORTANTE REVISAR!!!!!!
