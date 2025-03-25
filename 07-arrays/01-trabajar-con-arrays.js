@@ -64,3 +64,8 @@ const restultado3 = usuarios.find(usuario => usuario.id === 1); //cuando solo ti
 const restultado4 = usuarios.findIndex(usuario => usuario.id === 1); //esto devuelve el indice donde esta el objeto
 
 //VACIANDO ARRAYS//
+
+let arr = [1, 2];
+arr = []; //lo podemos asignar a un array vacio
+arr.length = 0; //lo hacemos de longitud 0
+arr.splice(0, arr.length); //lo vaciamos con splice
