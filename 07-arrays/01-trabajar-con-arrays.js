@@ -27,24 +27,6 @@ console.log(letras3.lastIndexOf('c')); //si hay 2 iguales te devuelve el ultimo 
 console.log(letras3.includes('c')); //si incluye el elemento devuelve true y si no false
 //a la hroa de buscar datos primitivos el tipo de dato es importante, no es lo mismo buscar 1 que '1'
 
-//FAT ARROW FUNCTIONS//
-
-function hola() {
-    return 'Hola Mundo';
-}
-
-const resultado = hola();
-
-//podemos hacer exactamente lo mismo que esto pero de otra forma
-
-const hola2 = () => { //estas funciones son anonimas
-    return 'Hola mundo'
-}
-
-//estas funciones tambien tienen un return implicito porque esto tambien lo podriamos escribir asi:
-//pero esto del return implicito solo sirve con funciones que tengan una linea de codigo, si no hay que escribirlas como arriba
-const hola3 = () => 'Hola mundo'; //tambien se les pueden meter parametros
-
 //BUSCAR VALORES DE REFERENCIA (EN VEZ DE PRIMITIVOS) EN UN ARRAY// video 78
 
 const usuarios = [
@@ -69,3 +51,17 @@ let arr = [1, 2];
 arr = []; //lo podemos asignar a un array vacio
 arr.length = 0; //lo hacemos de longitud 0
 arr.splice(0, arr.length); //lo vaciamos con splice
+
+//COMBINANDO ARRAYS//
+
+let arr2 = [1, 2];
+let arr3 = [3, 4];
+
+arr2.concat(arr3); //este metodo combina arrays pero no modifica ninguno, es decir crea uno nuevo
+let combinados = arr2.concat(arr3); //por lo que hay que asignarselo a una nueva variable
+
+//DIVIDIENDO ARRAYS//
+
+let divididos = combinados.slice(1, 2); //(indice en el que empieza, indice en el que acaba)
+let divididos2 = combinados.slice(1); //nuevo array que empieza desde el indice 1
+let divididos3 = combinados.slice(); //es igual PERO NO ES EL MISMO ES UNA COPIA ¡¡POR SI PREGUNTAN COMO HACER COPIA!!
