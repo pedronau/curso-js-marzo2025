@@ -65,3 +65,34 @@ let combinados = arr2.concat(arr3); //por lo que hay que asignarselo a una nueva
 let divididos = combinados.slice(1, 2); //(indice en el que empieza, indice en el que acaba)
 let divididos2 = combinados.slice(1); //nuevo array que empieza desde el indice 1
 let divididos3 = combinados.slice(); //es igual PERO NO ES EL MISMO ES UNA COPIA ¡¡POR SI PREGUNTAN COMO HACER COPIA!!
+
+//ORDENANDO ARRAYS//
+
+let numeros = [15, 10, -3 ];
+
+numeros.sort(); //por defecto devuelve los numeros de menor a mayor. hace lo mismo con las letras minusculas
+numeros.reverse(); //ordena de mayor a menor. hace lo mismo con las letras minusculas
+
+//pero cuando intentamos ordenar de este modo con arrays funciona diferente. ordena por los caracteres ascii (BUSCAR). 
+//para ordenar mejor strings:
+
+let conMayusculas = ['Z', 'a', 'd'];
+
+conMayusculas.sort((a, b) => {
+    /**si quieres a antes que b => -1
+     * b antes que a => 1
+     * si son iguales => 0
+     */
+    let alower = a.toLowerCase();
+    let blower = b.toLowerCase();
+
+    if (alower < blower) {
+        return -1
+    } if (alower > blower) {
+        return 1
+    } else {
+        0
+    }
+});
+
+//se puede hacer LO MISMO CON OBJETOS (consultar video 83)
