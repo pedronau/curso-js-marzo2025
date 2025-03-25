@@ -44,3 +44,23 @@ const hola2 = () => { //estas funciones son anonimas
 //estas funciones tambien tienen un return implicito porque esto tambien lo podriamos escribir asi:
 //pero esto del return implicito solo sirve con funciones que tengan una linea de codigo, si no hay que escribirlas como arriba
 const hola3 = () => 'Hola mundo'; //tambien se les pueden meter parametros
+
+//BUSCAR VALORES DE REFERENCIA (EN VEZ DE PRIMITIVOS) EN UN ARRAY// video 78
+
+const usuarios = [
+    { id: 1, name: 'Chanchito'},
+    { id: 1, name: 'Felipe'},
+    { id: 2, name: 'Feliz'},
+]; 
+
+const resultado2 = usuarios.find(function(usuario) {
+    return usuario.id === 1; 
+});
+
+//a las funciones que le pasamos como argumentos o parametros otras funciones o metodos les llamamos predicate (significa funcion que devuelve true o false)
+//vamos a volver a escribirlo pero con arrow function
+
+const restultado3 = usuarios.find(usuario => usuario.id === 1); //cuando solo tiene un parametro, en una arrow function se puede poner asi sin el function(...). esto devuelve un OBJETO
+const restultado4 = usuarios.findIndex(usuario => usuario.id === 1); //esto devuelve el indice donde esta el objeto
+
+//VACIANDO ARRAYS//
