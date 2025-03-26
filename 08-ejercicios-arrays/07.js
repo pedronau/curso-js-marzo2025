@@ -8,9 +8,13 @@ const usuarios = [
 ];
 
 function groupBy(arr, prop) {
-    let filtered = {
-        
-    }
+    return arr.reduce((acc, el) => {
+        let valor = el[prop];
+
+        acc[valor] = acc[valor] ? acc[valor] : [];
+        acc[valor].push(el);
+        return acc;
+    }, {});
 }
 
 const grouped = groupBy(usuarios, 'plan');
