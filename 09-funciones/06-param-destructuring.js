@@ -29,7 +29,7 @@ console.log(webserver3({ url: 'https://saludosmundo.io' }));
 //tambien podemos:
 
 const config2 = {
-    url: 'https://holamundo.io',
+    url: 'https://okeymundo.io',
     direccion: {
         calle: 'hola mundo',
         numero: 80,
@@ -37,3 +37,34 @@ const config2 = {
 }
 
 console.log(webserver3(config2)); //me devuelve solo la url
+
+//y si quiero que me devuelva la url y la calle pues:
+
+function webserver4({ url, direccion: {calle} }) {
+    console.log(calle);
+    return url;
+}
+
+function webserver4({ url, ...rest }) { //lo mismo que lo de arriba. resto de propiedades del objeto que le hemos pasado. esto de rest tambien se puede usar dentro de la funcion
+    console.log(calle);
+    return url;
+}
+
+//y si queremos lo mismo pero con un array
+
+const config3 = [
+    'https://achomundo.io',
+    145,
+    80,
+]
+
+function webserver5([url, bucket, port]) { //de todos los parametros que le pasamos solo le pedimos que nos devuelva la url
+    return url;
+}
+
+function webserver6([url, ...rest]) { //esto es lo mismo que lo de arriba pero ademas imprime en consola los parametros restantes en un array
+    console.log(rest);
+    return url;
+}
+
+console.log(webserver(config3));
