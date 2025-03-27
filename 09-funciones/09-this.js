@@ -1,4 +1,4 @@
-//this hace referencia a un objeto (al objeto que estamos utilizando)
+//dentro de un objeto, this hace referencia al objeto (al objeto que estamos utilizando)
 //pero si this no se encuentra dentro de un objeto y se encuentra dentro de una fumcion, this hacer referencia al objeto window
 //pero si usamos la palabra reservada de new hace referencia al objeto que será creado
 
@@ -36,3 +36,19 @@ Log('paco'); //imprime objeto window
  * 3) se vincula el prototipo
  * 4) si no retorna nada, entonces retorna this
 */
+
+//CONTEXTO DE THIS// tabajar en JS con this puede ser muy confuso y hay gente que prefiere no utilizarlo por lo que 
+
+const usuario = {
+    nombre: 'Nicolas',
+    ciudadanias: ['Chile', 'Colombia', 'New Zeland'],
+    mostrarCiudadanias() {
+        this.ciudadanias.forEach(ciudadania => {
+            console.log(this.nombre, ciudadania); //aqui el this si funciona aunque este dentro de una funcion (aunque normalmente dentro de una funcion hace referencia al window) porque al ser una arrow function hereda la propiedad desde arriba porque las fat arrow functions no tienen contezto de this, por lo que se van a buscarlo a mas arriba
+        });
+    }
+}
+
+usuario.mostrarCiudadanias(); //en este caso si que nos imprime las ciudadanias
+
+//metodos antiguos de this VIDEO 111//
