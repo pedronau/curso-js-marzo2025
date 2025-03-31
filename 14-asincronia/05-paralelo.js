@@ -20,4 +20,13 @@ Promise.all([p1, p2, p3]).then(valores => console.log('all', valores)).catch(e =
 Promise.race([p1, p2, p3]).then(valor => console.log('race', valor)).catch(e => console.log('error en race', e));
 
 //ANY//
-//
+//toma la primera promesa que sea resuelta de forma exitosa, si p1 es rechazada se la salta hasta llegar a una que se resuelva de manera exitosa
+//para saltar al catch pues todas rechazadas
+
+Promise.any([p1, p2, p3]).then(valor => console.log({ valor })).catch(e => console.log({ e })); //{ valor } => forma corta de escribir { valor: valor }
+
+//ALLSETTLED//
+//nos devuelve un objeto con el estatus de las promesas y sus valores
+//lo del catch pos no va igual pero no me he enterao mucho
+
+Promise.allSettled([p1, p2, p3]).then(valores => console.log({ valores })).catch(e => console.log({ e }));
