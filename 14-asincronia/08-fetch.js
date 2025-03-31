@@ -26,7 +26,7 @@ fetch(url)
      * aunque nos devuelva un 404 o un 500 el codigo de fetch se ejecuta, entonces lo que hay que hacer es rechazar una promesa:
     */
 
-    fetch(url)
+fetch(url)
     .then(response => {
         if(response.ok) { //response.ok devuelve false si el codigo devuelto no se encuentra entre 200-299 (codigos HTTP de exito)
             return response.json();
